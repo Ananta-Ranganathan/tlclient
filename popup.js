@@ -33,13 +33,13 @@ function startRecordingChunk() {
             }
         };
 
-        mediaRecorder.start(5000); // Start recording for 5 seconds
+        mediaRecorder.start(6000); // Start recording for 5 seconds
 
         setTimeout(() => {
             if (mediaRecorder.state === 'recording') {
                 mediaRecorder.stop();
             }
-        }, 5000);
+        }, 6000);
 
         console.log("Started recording chunk");
     }
@@ -64,13 +64,7 @@ document.getElementById('startButton').addEventListener('click', function() {
     });
 });
 
-document.getElementById('stopButton').addEventListener('click', function() {
+document.getElementById('clearButton').addEventListener('click', function() {
     if (!isRecording) return;
-    isRecording = false;
-    console.log("Stopping");
-
-    if (intervalId) {
-        clearInterval(intervalId);
-        intervalId = null;
-    }
+    document.getElementById('translatedText').textContent = "";
 });
