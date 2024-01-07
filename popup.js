@@ -15,7 +15,7 @@ function sendAudio(blob) {
     .then(data => {
         console.log("Data received");
         console.log(data);
-        document.getElementById('translatedText').textContent += data.translatedText + "\n";
+        document.getElementById('translatedText').textContent += data.translatedText + " ";
     })
     .catch(error => {
         console.error('Error:', error);
