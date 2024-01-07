@@ -49,6 +49,7 @@ document.getElementById('startButton').addEventListener('click', function() {
     if (isRecording) return;
     isRecording = true;
     console.log("Starting");
+    document.getElementById('translatedText').textContent = "Transcribing..." + "\n";
 
     chrome.tabCapture.capture({ audio: true, video: false }, function(capturedStream) {
         if (capturedStream) {
@@ -66,5 +67,5 @@ document.getElementById('startButton').addEventListener('click', function() {
 
 document.getElementById('clearButton').addEventListener('click', function() {
     if (!isRecording) return;
-    document.getElementById('translatedText').textContent = "";
+    document.getElementById('translatedText').textContent = "Transcribing..." + "\n";
 });
